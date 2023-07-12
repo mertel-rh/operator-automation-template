@@ -1,0 +1,33 @@
+This files has examples of "patch" content to customize the overlays available in this project. You can use fields like the ones below in the kustomize.yaml files in each directory to allow for unique customizations in each environment. Below are a few examples, but may more exist and this patch capability provides flexibility to configure each deployment model as needed.
+
+patchesJson6902:
+  - target:
+      kind: Subscription
+      name: amq-streams
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/channel
+        value: stable
+
+patchesJson6902:
+  - target:
+      kind: Subscription
+      name: amq-streams
+    patch: |-
+      - op: replace
+        path: /spec/namespace
+        value: amq-streams-operator
+
+patchesJson6902:
+  - target:
+      kind: Subscription
+      name: amq-streams
+    patch: |-
+      - op: replace
+        path: /spec/name
+        value: amq-streams
+
+configMapGenerator:
+  - name: amqstreams-versions
+    envs:
+    - operator.versions

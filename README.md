@@ -1,4 +1,4 @@
-# EOCP Operator GitOps Deployment Template
+# Operator GitOps Deployment Template
 
 ## How to use this template
 
@@ -61,7 +61,7 @@ overlays/Staging/kustomization.yaml:namespace: operatorname-operator
 
 7) Push code changes to GitLab and configure your ArgoCD Application to use the newly created and configured content
 
-# EOCP Operator GitOps Deployment Capability
+# Operator GitOps Deployment Capability
 
 ## Description
 
